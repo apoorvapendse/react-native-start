@@ -8,10 +8,12 @@ function App(){
 return(
   <SafeAreaView>
 <View>
-  <Text style={{color:'green',fontFamily:'system-ui'}}>
-    Hello World!
-   </Text>
+  <Text>
+
+
+  
    <AppPro/>
+  </Text>
   
 </View>
 </SafeAreaView>
