@@ -7,7 +7,7 @@ export default function PlaceCards() {
     <View>
       <Text style={styles.headingText}>PlaceCards</Text>
       <View style={[styles.card,styles.cardElevated]}>
-       <Image source={tajImage} style={styles.cardImage}/>
+       <Image source={{uri:'https://lh3.googleusercontent.com/p/AF1QipNIfUUPfTBNHXxVRoQq3dqZThO87ym3M0weCN4P=s1360-w1360-h1020'}} style={styles.cardImage}/>
 
 
 
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
     },
     cardImage:{
-            width:200,
+            width:300,
             height:300
     }
 
