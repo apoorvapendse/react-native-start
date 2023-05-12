@@ -3,6 +3,7 @@ import React from 'react'
 import FlatCards from './components/FlatCards'
 import ScrollAbleCards from './components/ScrollAbleCards'
 import PlaceCards from './components/PlaceCards'
+import ActionCard from './components/ActionCard'
 
 const App = () => {
   return (
@@ -35,6 +36,11 @@ const App = () => {
 <PlaceCards/>
 
 </View>
+
+{/* Action card making use of touchable opacity */}
+<ActionCard/>
+
+
 
  </ScrollView>
 
