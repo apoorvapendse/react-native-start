@@ -1,0 +1,7 @@
+cd android/
+./gradlew assembleRelease
+
+
+to create appu.apks in Downloads folder
+java -jar /home/apoorva/Downloads/bundletool-all-1.14.1.jar build-apks --bundle=/home/apoorva/Documents/GitHub/react-native-start/project2/android/app/build/outputs/bundle/release/app-release.aab --output /home/apoorva/Downloads/appu.apks --ks=/home/apoorva/Documents/GitHub/react-native-start/project2/android/app/my-upload-key.keystore --ks-key-alias=my-key-alias --mode=universal
+
