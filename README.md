@@ -9,7 +9,7 @@ To get started with this repo, you will need to have Node.js and Expo CLI instal
 
 
 
-`npm install -g expo-cli`
+```npm install -g expo-cli```
 Once you have installed Node.js and Expo CLI, you can clone this repository using the following command:
 
 
