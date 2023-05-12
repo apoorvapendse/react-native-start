@@ -6,7 +6,9 @@ import PlaceCards from './components/PlaceCards'
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{
+      backgroundColor:'#222224'
+    }}>
       {/* vertical scroll view for the entire app */}
       <ScrollView >
 
