@@ -10,14 +10,18 @@ To get started with this repo, you will need to have Node.js and Expo CLI instal
 
 
 ```npm install -g expo-cli```
+
+
 Once you have installed Node.js and Expo CLI, you can clone this repository using the following command:
 
 
-git clone https://github.com/<username>/react-native-start.git
+```git clone https://github.com/<username>/react-native-start.git```
+
 After cloning the repo, navigate to the project directory and run the following command to install the required dependencies:
 
 
-npm install
+```npm install```
+
 To run an app, navigate to its respective directory and run the following command:
 
 
