@@ -2,6 +2,7 @@ import { View, Text, SafeAreaView, ScrollView, StyleSheet,FlatList} from 'react-
 import React from 'react'
 import FlatCards from './components/FlatCards'
 import ScrollAbleCards from './components/ScrollAbleCards'
+import PlaceCards from './components/PlaceCards'
 
 const App = () => {
   return (
@@ -27,6 +28,11 @@ const App = () => {
 </View>
 
 
+{/* place cards */}
+<View>
+<PlaceCards/>
+
+</View>
 
  </ScrollView>
 
