@@ -8,7 +8,8 @@ Each app is stored in a separate repository within this main repo, called react-
 To get started with this repo, you will need to have Node.js and Expo CLI installed on your system. You can download Node.js from the official website, and install Expo CLI using the following command:
 
 
-npm install -g expo-cli
+
+`npm install -g expo-cli`
 Once you have installed Node.js and Expo CLI, you can clone this repository using the following command:
 
 
