@@ -4,7 +4,7 @@ import React from 'react'
 export default function ContactList() {
     const contacts=[
         {
-            name:'Kenneth Rogers',
+            name:'Pushkar Waghmare',
             uid:1,
             photoURL:'https://randomuser.me/api/portraits/men/63.jpg',
             status:'The way to get started is to quit talking and begin doing'
@@ -32,7 +32,7 @@ export default function ContactList() {
 
   return (
 
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{padding:20}}>
         {contacts.map((item,index)=>{
             return(
                 
@@ -56,10 +56,11 @@ const styles = StyleSheet.create({
         width:300,
         backgroundColor:'white',
         marginVertical:20,
-        marginHorizontal:6,
+        marginHorizontal:12,
         flex:1,
         alignItems:'center',
-        borderRadius:12
+        borderRadius:12,padding:10,
+        
     },
     contactImage:{
         height:150,
@@ -67,12 +68,13 @@ const styles = StyleSheet.create({
         borderRadius:75,
         borderColor:'blueviolet',
         borderWidth:2,
-        marginTop:4
+        marginTop:4,
     },
     personName:{
         fontStyle:'italic',
         color:'black',
         fontWeight:'500',
+        elevation:4,
         fontSize:16
     },
     status:{
@@ -80,6 +82,6 @@ const styles = StyleSheet.create({
         fontFamily:'Roboto',
         textAlign:'center',
         fontWeight:'400'
-        ,padding:10
+        ,padding:10,
     }
 })
