@@ -6,9 +6,9 @@ import {Formik} from 'formik'
 //form validation
 import * as Yup from 'yup'
 const passwdSchema = Yup.object().shape({
-  passwordLength:Yup.number().min(4,'Password length should atleast be 4 chars')
-  .max(16,'password length cannot exceed 16 chars')
-  .required('length is required')
+  passwordLength:Yup.number().min(4,'min length >= 4')
+  .max(16,'max length <= 16')
+  .required('please enter length')
 })
 
 const App = () => {
@@ -32,11 +32,12 @@ const App = () => {
     if(uppercase){
       characters += uppercaseCharacters;
     }
-    if(lowercase){characters.concat(lowercaseCharacters)};
-    if(useNumbers){characters.concat(numbers)};
-    if(useSymbols){characters.concat(specialChars)}
+    if(lowercase){characters+=(lowercaseCharacters)};
+    if(useNumbers){characters+=(numbers)};
+    if(useSymbols){characters+=(specialChars)}
 
     const password = createPassword(characters,passwordLength)
+    console.log("password is",password)
     setPassword(password);
     setIsPasswordGenerated(true);
   }
@@ -45,8 +46,9 @@ const App = () => {
     let result='';
     for (let i = 0; i < passwordLength; i++) {
       const characterIndex = Math.round( Math.random()*characters.length);
-      result.concat(characters.charAt(characterIndex));
+      result+=(characters.charAt(characterIndex));
 }
+console.log("string:",characters)
   return result;
   }
 
@@ -92,15 +94,17 @@ const App = () => {
          {/* for password length */}
           <View style={styles.inputWrapper}>
           <View style={{flex:1,flexDirection:'row',justifyContent:'space-evenly',alignItems:'center'}}>
-            <Text>Password Length:</Text>
-            {touched.passwordLength&&errors.passwordLength&&(<Text style={{color:'red'}}>{errors.passwordLength}</Text>)}
+            {touched.passwordLength && errors.passwordLength && (
+              <Text style={{color:'red',backgroundColor:'white',}}>{errors.passwordLength}</Text>
+            )}
             <TextInput style={styles.inputStyle} 
             value={values.passwordLength}
-             onChangeText={handleChange('passwordLength')}
+            onChangeText={handleChange('passwordLength')}
             placeholder='enter length'
             keyboardType='numeric'
             />
           </View>
+            
 
           </View>
 
@@ -160,8 +164,12 @@ const App = () => {
          
 
         <View style={styles.formButtons}>
-        <TouchableOpacity><Text>Submit</Text></TouchableOpacity>
-        <TouchableOpacity><Text>Reset</Text></TouchableOpacity>
+          {/* handlesubmit will call onSubmit() onPress */}
+        <TouchableOpacity disabled={!isValid} onPress={handleSubmit}><Text style={styles.submitButton}>Submit</Text></TouchableOpacity>
+        <TouchableOpacity  onPress={()=>{
+          handleReset();
+          resetPassword();
+        }}><Text style={styles.resetButton}>Reset</Text></TouchableOpacity>
 
         </View>
          </>
@@ -171,6 +179,16 @@ const App = () => {
 
 
       </View>
+
+     
+
+          {isPasswordGenerated?(
+            <View style={styles.passwordContainer}>
+              <Text style={{color:'black'}}>long press to copy:</Text>
+            <Text selectable={true} style={styles.actualPassword}>{password}</Text>
+          </View>
+
+):(null)}
 
     </View>
         </SafeAreaView>
@@ -192,7 +210,7 @@ const styles = StyleSheet.create({
     width:'100%'
   },
   inputWrapper:{
-    margin:20,
+    margin:7,
     flex:1,
     flexDirection:'row',
     alignItems:'center'
@@ -200,7 +218,10 @@ const styles = StyleSheet.create({
   },
   
   formButtons:{
-
+    flex:1,
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    alignItems:'center'
   },
   inputStyle:{
     backgroundColor:'black',
@@ -213,5 +234,30 @@ const styles = StyleSheet.create({
   },
   checkbox:{
     height:50
+  },
+  submitButton:{
+    padding:20,
+    backgroundColor:'greenyellow',
+    fontWeight:'bold',
+    borderRadius:12,
+    color:'black'
+
   }
+  ,resetButton:{
+    padding:20,
+    backgroundColor:'red',
+    fontWeight:'bold',
+    borderRadius:12,
+    color:'white'
+  },
+  actualPassword:{color:'black',fontSize:23,},
+  passwordContainer:{
+   flex:1,
+   alignItems:'center',
+   justifyContent:'center',
+    backgroundColor:'white',
+    width:400,
+    height:100
+  }
+
 })
