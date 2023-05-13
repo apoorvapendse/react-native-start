@@ -13,24 +13,36 @@ const Contacts = () => {
             uid:1,
             photoURL:'https://pps.whatsapp.net/v/t61.24694-24/341748576_1353252512073708_1024515538919955623_n.jpg?ccb=11-4&oh=01_AdSC74smXyeOfh5l_FOuPuJ9I6vBtssK2r6l1xDbC0tzXQ&oe=646ACD3B',
             status:'*whistles song*',
-            phoneNumber:'+917058982813'
+            phoneNumber:'7058982813'
         },
 
         {
             uid:2,
+            name:'Vishwajeet',
+            status:"My life my journey my rules 🤟",
+            photoURL:'https://pps.whatsapp.net/v/t61.24694-24/302121642_197112542690191_6682394584226465002_n.jpg?ccb=11-4&oh=01_AdQLTF_2N7_qNBZeGnfYWrLmSfdgRe4OpVWw7eMdZSpc-w&oe=646AD707',
+            phoneNumber:'7774909121'
+
+        },
+        {
+            uid:4,
             name:'Srujan Patwardhan',
-            status:"Trusting the prcoess",
+            status:'Trusting the process',
             photoURL:'https://pps.whatsapp.net/v/t61.24694-24/321083082_634374691705815_346537577382888249_n.jpg?ccb=11-4&oh=01_AdTsifFxppsVzuGOFx9F3-o2Af76leNTKg2NfrwxZuRm8Q&oe=646AD856',
-            phoneNumber:'+918764798644'
+            phoneNumber:'8767498644'
 
-        },{
+        },
+        
+        
+        
+        {
             uid:3,
-            name:'Vivek Pendse',
-            status:'The joys of being a jack of all trades, master of none is that I work with a lot of products that are fun,even if I only see them few times',
-            photoURL:'https://pps.whatsapp.net/v/t61.24694-24/325780952_1351139642395962_6969388178581145019_n.jpg?ccb=11-4&oh=01_AdQLz33Z9V5fYEa4yDYQN-G_Ihc2h0FH6CA5ufCLo0CdmA&oe=646B5092',
-            phoneNumber:'+919422712237'
+            name:'Shreya Patwardhan',
+            status:'VR Veloce 🏎️🏎️🏎️ ',
+            photoURL:'https://pps.whatsapp.net/v/t61.24694-24/311460345_184911064083691_8462246825487457871_n.jpg?ccb=11-4&oh=01_AdSJkWf4cIGU-SuWmCKVr2xVXf6WBrDOeMoi597GHs8l0g&oe=646AD22B',
+            phoneNumber:'9158994184'
 
-        }
+        },
     ]
 
 
@@ -79,10 +91,11 @@ const styles = StyleSheet.create({
     },
     contactContainer:{
     backgroundColor:'#383CC1',
-    borderWidth:1,
+    // borderWidth:1,
     borderRadius:4,
-    
-    padding:10,
+    marginVertical:3,
+    paddingHorizontal:10,
+    paddingVertical:5,
     borderColor:'turquoise',
     // marginVertical:3,
     flex:1,
