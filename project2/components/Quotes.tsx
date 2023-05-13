@@ -4,28 +4,28 @@ import React from 'react'
 export default function ContactList() {
     const contacts=[
         {
-            name:'Pushkar Waghmare',
+            name:'Prakash Waghmare',
             uid:1,
             photoURL:'https://randomuser.me/api/portraits/men/63.jpg',
-            status:'The way to get started is to quit talking and begin doing'
+            status:'This is the best app i have come across in a while!'
         },
 
         {
             uid:2,
             name:'Ganesh Dhotre',
-            status:"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            status:"Apoorva is a great developer, this app gives me so much joy",
             photoURL:'https://randomuser.me/api/portraits/men/46.jpg',
 
         },{
             uid:3,
             name:'Chote Dole',
-            status:'think BIG!',
+            status:'A wise man once said nothing',
             photoURL:'https://randomuser.me/api/portraits/men/90.jpg'
         }
     ]
 
 
-    const loadImage =(photoURL)=>{
+    const loadImage =(photoURL:string)=>{
         Linking.openURL(photoURL)
     }
     

@@ -4,7 +4,8 @@ import FlatCards from './components/FlatCards'
 import ScrollAbleCards from './components/ScrollAbleCards'
 import PlaceCards from './components/PlaceCards'
 import ActionCard from './components/ActionCard'
-import ContactList from './components/ContactList'
+import Quotes from './components/Quotes'
+import Contacts from './components/Contacts'
 
 const App = () => {
   return (
@@ -39,12 +40,16 @@ const App = () => {
 </View>
 
 
-{/* ContactList */}
-<ContactList/>
+{/* Quotes */}
+<Quotes/>
 
+
+{/* Contacts */}
+<Contacts/>
 
 {/* Action card making use of touchable opacity */}
 <ActionCard/>
+
 
  </ScrollView>
 
