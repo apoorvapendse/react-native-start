@@ -16,7 +16,7 @@ const App = () => {
 
         <Image style={styles.hpImage} source={hplogo}/>
        </TouchableOpacity>
-        <Text style={styles.introText}>HPE Services plays a critical role in differentiating HPE from our competitors.  We take great pride in providing an exceptional customer experience, driving automation through innovative technologies, accelerating time to value for our customers, helping them achieve their digital ambitions.
+        <Text style={[styles.introText,{textAlign:'center'}]}>HPE Services plays a critical role in differentiating HPE from our competitors. We take great pride in providing an exceptional customer experience, driving automation through innovative technologies, accelerating time to value for our customers, helping them achieve their digital ambitions.
 </Text>
      
       </View>

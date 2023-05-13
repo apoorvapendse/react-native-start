@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         borderColor:'turquoise',
         marginHorizontal:20,
         marginTop:20,
-        borderRadius:20
+        borderRadius:20,
       },
       cardViewer:{
         padding:20,
@@ -53,5 +53,6 @@ const styles = StyleSheet.create({
         backgroundColor:'turquoise',
         marginTop:10,
         marginHorizontal:6
+        ,marginBottom:10
       }
 })

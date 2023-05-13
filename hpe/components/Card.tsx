@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         elevation:10,
-        marginHorizontal:5
+        marginHorizontal:10,
+        marginBottom:12
     },
     memberName:{
         color:'white',
