@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
         fontSize:15
         },
     memberPosition:{
-
+      fontStyle:'italic',
+      color:'white'
     },
     linksContainer:{
         display:'flex',
