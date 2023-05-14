@@ -13,7 +13,7 @@ export const App = () => {
     const newResult = (Number(inputValue) * rate).toFixed(2)
     const finalAns = newResult.toString();
     setResult(finalAns);
-    console.log(finalAns)
+    // console.log(finalAns)
   }
 
   return (
