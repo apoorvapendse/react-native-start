@@ -1,19 +1,38 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TextInput, View ,TouchableOpacity} from 'react-native'
+import React, { useState } from 'react'
 import Country from './Country'
 import indiaIcon from './assets/india.png'
 import data from '../data/data.json'
-const App = () => {
+export const App = () => {
+
+  const [inputValue,setInputValue] = useState('')
+ 
+  const [result,setResult]=useState('');
+
+  const updateConversion = (rate:number)=>{
+    const newResult = (Number(inputValue) * rate).toFixed(2)
+    const finalAns = newResult.toString();
+    setResult(finalAns);
+    console.log(finalAns)
+  }
+
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.conversionResult}>$ 12.33</Text>
-      <TextInput value={''} keyboardType='numeric' style={styles.inputBox} placeholder='enter amount' ></TextInput>
+    
+      <Text style={styles.conversionResult}>{result}</Text>
+
+
+      <TextInput value={inputValue} keyboardType='numeric' style={styles.inputBox} placeholder='enter amount' onChangeText={setInputValue}></TextInput>
+    
+    
     <View style={styles.countryContainer}>
    
 {
   data.map((item,index)=>{
     return(
-      <Country key={index} props={item.name,item.icon}/>
+      <TouchableOpacity  key={index} style={styles.countryBox} onPress={()=>{updateConversion(item.rate)}}>
+      <Country countryIcon={item.icon} countryName={item.name} countryExchangeRate={item.rate}/>
+      </TouchableOpacity>
     )
   })
 }
@@ -46,7 +65,7 @@ const styles = StyleSheet.create({
     margin:20,
     width:200,
     backgroundColor:'black',
-    textAlign:'center'
+    // textAlign:'center'
   },
   countryContainer:{
     height:'70%',
@@ -56,6 +75,20 @@ const styles = StyleSheet.create({
     flexWrap:'wrap',
     // backgroundColor:'green',
     justifyContent:'space-evenly'
-  }
+  },
+  countryBox:{
+    // backgroundColor:'white',
+    width:90,
+    height:90,
+    margin:10,
+    // flex:1,
+    display:'flex',
+    justifyContent:"center",
+    alignItems:'center',
+    backgroundColor:'black',
+    borderRadius:20,
+    elevation:6
+    
+},
 
 })
