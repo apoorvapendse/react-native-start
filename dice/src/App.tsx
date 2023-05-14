@@ -1,23 +1,38 @@
 import { SafeAreaView, StyleSheet, Text, View,Image, TouchableOpacity } from 'react-native'
-import React from 'react'
-import one from './../assets/one.png'
-import two from './../assets/two.png'
-import three from './../assets/three.png'
-import four from './../assets/four.png'
-import five from './../assets/five.png'
-import six from './../assets/six.png'
+import React, { useState } from 'react'
+import one from './../assets/one.gif'
+import two from "./../assets/two.png"
+import three from './../assets/three.gif'
+import four from "./../assets/four.png"
+import five from './../assets/five.gif'
+import six from './../assets/six.gif'
 
 const App = () => {
+  const [diceNumber,setDiceNumber]=useState('');//we will put url in the useState
+
+  const generateNumber =()=>{
+    const arrayOfChoices =[one,two,three,four,five,six];
+    const newChoiceIndex = Math.floor(Math.random() * 6);
+    setDiceNumber(arrayOfChoices[newChoiceIndex]);
+    console.log(newChoiceIndex)
+  }
+
+
+
   return (
     <SafeAreaView>
 
     <View style={styles.mainContainer}>
-      <Image style={styles.diceBox} source={one}></Image>
+      <View style={{elevation:12}}>
 
-      <View>
-        <TouchableOpacity>
+      <Image style={styles.diceBox}   source={diceNumber}
+   ></Image>
+      </View>
 
-        <Text>Roll Dice</Text>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={()=>{generateNumber()}}>
+
+        <Text style={styles.rollText}>Roll Dice</Text>
         </TouchableOpacity>
       </View>
 
@@ -34,8 +49,28 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     alignItems:'center',
     height:'100%',
-    backgroundColor:'#f0f0f0'
+    backgroundColor:'#51E1ED'
 
+  },
+  rollText:{
+    color:'greenyellow',
+    fontWeight:'bold',
+    
+    fontSize:20,
   }
-
+  ,buttonContainer:{
+    borderRadius:4,
+   
+    backgroundColor:'black',
+    paddingVertical:20,
+    paddingHorizontal:40,
+    marginTop:30,
+    elevation:6
+  },
+  diceBox:{
+    borderWidth:1,
+    borderColor:'black',
+    width:300,
+    height:300
+  }
 })
