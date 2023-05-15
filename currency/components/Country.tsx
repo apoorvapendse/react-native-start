@@ -3,22 +3,24 @@ import React from 'react'
 import { PropsWithChildren } from 'react'
 import App from './App'
 
+//countryIconProps is a custom datatype which has two components
 type countryIconProps = PropsWithChildren<{
-    imageUrl:ImageSourcePropType,
-    name:string
+  countryIcon:ImageSourcePropType,
+    countryName:string,
+    countryExchangeRate:number
 }>
 
 
 
-const Country = ({countryName,countryIcon,countryExchangeRate}) => {
+const Country = (props:countryIconProps):JSX.Element => {
   // console.log(countryIcon)
   return (
     
 
    
     <View >
-        <Image source={{uri:`${countryIcon}`}} style={styles.countryImage}></Image>
-      <Text style={styles.countryName}>{countryName}</Text>
+        <Image source={{uri:`${props.countryIcon}`}} style={styles.countryImage}></Image>
+      <Text style={styles.countryName}>{props.countryName}</Text>
     </View>
    
    

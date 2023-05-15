@@ -1,18 +1,34 @@
 import { StyleSheet, Text, TextInput, View ,TouchableOpacity} from 'react-native'
 import React, { useState } from 'react'
 import Country from './Country'
-import indiaIcon from './assets/india.png'
 import data from '../data/data.json'
+import Snackbar from 'react-native-snackbar'
+
+
+
 export const App = () => {
 
   const [inputValue,setInputValue] = useState('')
  
   const [result,setResult]=useState('');
 
-  const updateConversion = (rate:number)=>{
+  const[targetCountry,setTargetCountry]=useState('');
+
+  const updateConversion = (rate:number,name:string)=>{
+    if(!inputValue){
+    return  Snackbar.show({
+        text: 'Enter Amount First!',
+        backgroundColor:'black',
+        duration: Snackbar.LENGTH_SHORT,
+      });
+    }
+
     const newResult = (Number(inputValue) * rate).toFixed(2)
     const finalAns = newResult.toString();
     setResult(finalAns);
+    setTargetCountry(name);
+
+
     // console.log(finalAns)
   }
 
@@ -29,10 +45,17 @@ export const App = () => {
    
 {
   data.map((item,index)=>{
+   
+  
+
+   
     return(
-      <TouchableOpacity  key={index} style={styles.countryBox} onPress={()=>{updateConversion(item.rate)}}>
+      
+      <TouchableOpacity  key={index} style={[styles.countryBox,item.name===targetCountry?styles.targetCountry:{}]}
+         onPress={()=>{updateConversion(item.rate,item.name)}}>
       <Country countryIcon={item.icon} countryName={item.name} countryExchangeRate={item.rate}/>
       </TouchableOpacity>
+
     )
   })
 }
@@ -90,5 +113,8 @@ const styles = StyleSheet.create({
     elevation:6
     
 },
+targetCountry:{
+  backgroundColor:'blueviolet'
+}
 
 })
