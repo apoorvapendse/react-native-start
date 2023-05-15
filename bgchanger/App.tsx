@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const App = () =>{
 
-  const [bgcolor,setBgColor] = useState('#ffffff')
+  const [bgcolor,setBgColor] = useState('#000000')
   const [circle1,setCircle1]=useState('')
   const [circle2,setCircle2]=useState('')
   const [circle3,setCircle3]=useState('')
@@ -84,52 +84,49 @@ color:'white',
   },
   circle1:{
     borderWidth:1,
-    borderColor:'black',
     height:320,
     width:320,
     borderRadius:160,  
     position:'absolute',
     top:-120,
     left:-120
+    ,elevation:12
 },
   circle2:{
     borderWidth:1,
-    borderColor:'orange',
     height:100,
     width:100,
     borderRadius:50,  
     position:'absolute',
     top:200,
     left:200
+    ,elevation:12
 },
   circle3:{
     borderWidth:1,
-    borderColor:'blue',
     height:200,
     width:200,
     borderRadius:100,  
     position:'absolute',
     top:500,
-    left:290
+    left:290,elevation:12
 },
   circle4:{
     borderWidth:1,
-    borderColor:'black',
     height:80,
     width:80,
     borderRadius:40,  
     position:'absolute',
     top:550,
-    left:50
+    left:50,elevation:12
 },
   circle5:{
     borderWidth:1,
-    borderColor:'black',
     height:400,
     width:400,
     borderRadius:200,  
     position:'absolute',
     top:700,
-    left:20
+    left:20,elevation:20
 },
 })
