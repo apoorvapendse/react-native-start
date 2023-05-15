@@ -1,13 +1,24 @@
 import { Image, Linking, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-
+import {trigger} from 'react-native-haptic-feedback'
 const App = () => {
 
   const [gameArray, setGameArray] = useState([['', '', ''], ['', '', ''], ['', '', '']])
   const [currentPlayer, setCurrentPlayer] = useState(false);
   const [winner,setWinner]=useState('')
   // false means O's turn and true means X's turn 
+
+  const options = {
+    enableVibrateFallback: true,
+    ignoreAndroidSystemSettings: true,
+  };
+  
+
+
+
+
   const changeBox=(x:number,y:number)=>{
+    trigger('soft',options); 
     if(gameArray[x][y]!=''){
       return;
     }
@@ -139,11 +150,9 @@ const App = () => {
           {winner!=''||checkOver() ?<Text style={{fontSize:20,color:'white'}}>Start New Game</Text>:<Text style={{fontSize:20,color:'white'}}>Reset</Text>}
         </TouchableOpacity>
 
-<TouchableOpacity style={{display:'flex',justifyContent:'center',alignItems:'center'}} onPress={()=>{
-  Linking.openURL('https://github.com/ApoorvaPendse')
-}}><Text style={{color:'white'}}>Made by 
+<TouchableOpacity style={{display:'flex',justifyContent:'center',alignItems:'center'}}><Text style={{color:'blue',fontSize:11}}>Made by Apoorva and Vivek Pendse
  </Text>
- <View><Image style={{height:50,width:50,borderRadius:25}} source={{uri:'https://avatars.githubusercontent.com/u/102853901?v=4'}}></Image></View>
+ <View></View>
  </TouchableOpacity>
       </View>
 
