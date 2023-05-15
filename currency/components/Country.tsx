@@ -18,7 +18,7 @@ const Country = (props:countryIconProps):JSX.Element => {
     
 
    
-    <View >
+    <View style={{display:'flex',justifyContent:"center",alignItems:'center'}}>
         <Image source={{uri:`${props.countryIcon}`}} style={styles.countryImage}></Image>
       <Text style={styles.countryName}>{props.countryName}</Text>
     </View>
@@ -35,14 +35,14 @@ export default Country
 const styles = StyleSheet.create({
   
     countryImage:{
-        height:50,
-        width:50,
-        borderRadius:25,
+        height:100,
+        width:100,
+        borderRadius:50,
         
 
     },
     countryName:{
-        fontSize:14,
+        fontSize:24,
         fontStyle:'italic',
         color:'white',
         textAlign:'center'

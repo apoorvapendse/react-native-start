@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View ,TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, TextInput, View ,TouchableOpacity, FlatList, ScrollView} from 'react-native'
 import React, { useState } from 'react'
 import Country from './Country'
 import data from '../data/data.json'
@@ -33,32 +33,46 @@ export const App = () => {
   }
 
   return (
+
     <View style={styles.mainContainer}>
     
+
+
+      <TextInput value={inputValue} maxLength={13} clearButtonMode='always' keyboardType='numeric' style={styles.inputBox} placeholder='enter rupees' onChangeText={setInputValue}></TextInput>
       <Text style={styles.conversionResult}>{result}</Text>
-
-
-      <TextInput value={inputValue} keyboardType='numeric' style={styles.inputBox} placeholder='enter amount' onChangeText={setInputValue}></TextInput>
     
     
     <View style={styles.countryContainer}>
    
-{
+{/* {
   data.map((item,index)=>{
-   
-  
-
-   
+    
+    
+    
+    
     return(
       
-      <TouchableOpacity  key={index} style={[styles.countryBox,item.name===targetCountry?styles.targetCountry:{}]}
-         onPress={()=>{updateConversion(item.rate,item.name)}}>
-      <Country countryIcon={item.icon} countryName={item.name} countryExchangeRate={item.rate}/>
-      </TouchableOpacity>
+      // <TouchableOpacity  key={index} style={[styles.countryBox,item.name===targetCountry?styles.targetCountry:{ }]}
+      //    onPress={()=>{updateConversion(item.rate,item.name)}}>
+      // <Country countryIcon={item.icon} countryName={item.name} countryExchangeRate={item.rate}/>
+      // </TouchableOpacity>
+      
+      
+      )
+    })
+  } */}
 
-    )
-  })
-}
+
+<FlatList
+        numColumns={1}
+        data={data}
+        keyExtractor={item=>item.name}
+        renderItem={({item})=>(
+          <TouchableOpacity  style={[styles.countryBox,item.name===targetCountry?styles.targetCountry:{ }]}
+          onPress={()=>{updateConversion(item.rate,item.name)}}>
+         <Country countryIcon={item.icon} countryName={item.name} countryExchangeRate={item.rate}/>
+         </TouchableOpacity>)}
+      />
 
      
    
@@ -77,12 +91,13 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     padding:20,
+    paddingVertical:50,
     backgroundColor:'white',
     height:'100%'
   },
   conversionResult:{
     fontSize:24,
-    color:'black'
+    color:'black',
   },
   inputBox:{
     margin:20,
@@ -90,27 +105,28 @@ const styles = StyleSheet.create({
     backgroundColor:'black',
     // textAlign:'center'
   },
-  countryContainer:{
-    height:'70%',
-    width:'100%',
-    display:'flex',
-    flexDirection:'row',
-    flexWrap:'wrap',
-    // backgroundColor:'green',
-    justifyContent:'space-evenly'
-  },
+  // countryContainer:{
+  //   height:'70%',
+  //   width:'100%',
+  //   display:'flex',
+  //   flexDirection:'row',
+  //   flexWrap:'wrap',
+  //   alignItems:'center',
+  //   // backgroundColor:'green',
+  //   justifyContent:'space-evenly'
+  // },
   countryBox:{
     // backgroundColor:'white',
-    width:90,
-    height:90,
-    margin:10,
+    width:190,
+    height:190,
+    margin:20,
     // flex:1,
     display:'flex',
     justifyContent:"center",
     alignItems:'center',
     backgroundColor:'black',
     borderRadius:20,
-    elevation:6
+    elevation:8
     
 },
 targetCountry:{
