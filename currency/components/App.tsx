@@ -90,8 +90,7 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    padding:20,
-    paddingVertical:50,
+    padding:80,
     backgroundColor:'white',
     height:'100%'
   },
