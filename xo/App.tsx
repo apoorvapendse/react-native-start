@@ -1,6 +1,38 @@
 import { Image, Linking, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import {trigger} from 'react-native-haptic-feedback'
+import Sound from 'react-native-sound'
+
+
+Sound.setCategory('Playback');
+
+var bark = new Sound('dog.mp3', Sound.MAIN_BUNDLE, (error) => {
+  if (error) {
+    console.log('failed to load the sound', error);
+    return;
+  }
+  // loaded successfully
+  console.log('duration in seconds: ' + bark.getDuration() + 'number of channels: ' + bark.getNumberOfChannels());
+
+  // Play the sound with an onEnd callback
+});
+var meow = new Sound('cat.mp3', Sound.MAIN_BUNDLE, (error) => {
+  if (error) {
+    console.log('failed to load the sound', error);
+    return;
+  }
+  // loaded successfully
+  console.log('duration in seconds: ' + meow.getDuration() + 'number of channels: ' + bark.getNumberOfChannels());
+
+  // Play the sound with an onEnd callback
+});
+
+
+
+
+
+
+
 const App = () => {
 
   const [gameArray, setGameArray] = useState([['', '', ''], ['', '', ''], ['', '', '']])
@@ -27,7 +59,10 @@ const App = () => {
     {
       return;
     }
-    currentPlayer==true?gameArray[x][y]='😺':gameArray[x][y]='🐶'
+    bark.setCurrentTime(0.5);
+    meow.setVolume(0.3);
+    currentPlayer==true?meow.play():bark.play(); 
+  currentPlayer==true?gameArray[x][y]='😺':gameArray[x][y]='🐶'
     checkWin();
     setCurrentPlayer(!currentPlayer);
   }
