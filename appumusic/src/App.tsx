@@ -1,12 +1,16 @@
 import { StyleSheet, Text, View ,SafeAreaView,ScrollView,FlatList, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {setUpPlayer,loadTracks,playBackService} from './../musicService'
+import Controls from './Controls';
+import SongDetails from './SongDetails';
+import TrackPlayer from 'react-native-track-player';
+import MusicPlayer from './screens/MusicPlayer';
 
 const App = () => {
   const [isPlayerReady,setIsPlayerReady] = useState(false);
 
   async function setup(){
-    let isSetup = false;
+    let isSetup = await setUpPlayer();
     if(isSetup){
       await loadTracks();
     }
@@ -32,24 +36,18 @@ const App = () => {
     )
   }
 
-
-
   return (
-    <SafeAreaView>
-
-    <View>
-      <Text>App</Text>
-    </View>
-    </SafeAreaView>
-  )
-}
-
+  <MusicPlayer/>
+    )
+  }
 export default App
 
 const styles = StyleSheet.create({
 container:{
   display:'flex',
-  backgroundColor:'black'
+  backgroundColor:'black',
+  minHeight:'100%'
+  ,justifyContent:'space-evenly'
   
 }
 

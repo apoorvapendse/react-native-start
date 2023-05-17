@@ -33,5 +33,6 @@ export async function playBackService(){
     TrackPlayer.addEventListener(Event.RemoteSkip,()=>TrackPlayer.skip())
     TrackPlayer.addEventListener(Event.RemoteNext,()=>TrackPlayer.skipToNext())
     TrackPlayer.addEventListener(Event.RemotePrevious,()=>TrackPlayer.skipToPrevious())
+    TrackPlayer.addEventListener(Event.RemoteSeek,()=>TrackPlayer.seekTo())
 
 }
