@@ -18,10 +18,8 @@ import About from './src/screens/About'
  const Stack = createNativeStackNavigator();
 
 const App = () => {
-
-
   return (
-  <NavigationContainer >
+  <NavigationContainer  >
     <Stack.Navigator initialRouteName='Home' >
       <Stack.Screen name='Home' component={Home} options={{
       title:'HomeScreen',
