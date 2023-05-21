@@ -161,7 +161,7 @@ const App = () => {
               </Text>
             </View>
           </TouchableOpacity>
-
+          
 
           <TouchableOpacity onPress={() => { changeBox(1, 1); }}><View style={styles.gameTile}><Text style={styles.gameTileValue}>{gameArray[1][1]}</Text></View></TouchableOpacity>
 
