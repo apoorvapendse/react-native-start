@@ -1,6 +1,6 @@
 
-# React Native Starter Kit
-Welcome to my React Native Starter Kit! This repo contains a collection of small apps and projects that I built while learning React Native.
+# React Native Practice Apps
+Welcome to my React Native Practice Apps repo! This repo contains a collection of small apps and projects that I built while learning React Native.
 
 Each app is stored in a separate repository within this main repo, called react-native-start. This allows me to keep each project separate and organized, while still having them all in one place.
 
