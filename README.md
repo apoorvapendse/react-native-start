@@ -9,13 +9,13 @@ To get started with this repo, you will need to have Node.js and Expo CLI instal
 
 
 
-```npm install -g expo-cli```
+```npm install -g react-native-cli```
 
 
-Once you have installed Node.js and Expo CLI, you can clone this repository using the following command:
+Once you have installed Node.js and react native CLI, you can clone this repository using the following command:
 
 
-```git clone https://github.com/<username>/react-native-start.git```
+```git clone https://github.com/apoorvapendse/react-native-start.git```
 
 After cloning the repo, navigate to the project directory and run the following command to install the required dependencies:
 
@@ -23,10 +23,12 @@ After cloning the repo, navigate to the project directory and run the following 
 ```npm install```
 
 To run an app, navigate to its respective directory and run the following command:
+```react-native run-ios```
+# or
+```react-native run-android```
 
 
-
-From here, you can choose to run the app on an iOS or Android simulator, or on your physical device using the Expo app. You can also use the QR code scanner to run the app on your device.
+From here, you can choose to run the app on an iOS or Android simulator, or on your physical device. 
 
 ## Projects
 This repo contains several projects that I built while learning React Native. Each project is stored in a separate repository within the react-native-start folder.
