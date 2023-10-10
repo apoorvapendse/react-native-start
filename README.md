@@ -23,8 +23,9 @@ After cloning the repo, navigate to the project directory and run the following 
 ```npm install```
 
 To run an app, navigate to its respective directory and run the following command:
+
 ```react-native run-ios```
-# or
+#### or
 ```react-native run-android```
 
 
